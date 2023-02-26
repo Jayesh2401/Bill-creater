@@ -30,7 +30,7 @@ function Try() {
 
   useEffect(() => {
     const a = [
-      "",
+      "", 
       "one ",
       "two ",
       "three ",
