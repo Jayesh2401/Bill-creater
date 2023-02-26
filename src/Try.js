@@ -1367,7 +1367,8 @@ function Try() {
                         borderRight: "2px solid black",
                       }}
                     >
-                      {datas.gAmount}
+                      00
+                     // {datas.gAmount}
                     </td>
                     <td
                       style={{
