@@ -137,7 +137,7 @@ function Try() {
                   </tr>
                   <tr>
                     <td style={{ textAlign: "center", fontSize: "0.8em" }}>
-                      E-3004,CITY CENTER 2 RAIPUR AHMEDABAD-380002
+                      B 516,5TH FLOOR ISCON COMMERCIAL COMPLEX(VIP) OPP SUMEL BUSINESS PARK-1
                     </td>
                   </tr>
                   {/* <tr>
