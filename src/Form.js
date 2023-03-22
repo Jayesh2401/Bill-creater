@@ -3,41 +3,6 @@ import { useNavigate } from "react-router-dom";
 import "./App.css";
 
 function Form() {
-  // var a = [
-  //   "",
-  //   "one ",
-  //   "two ",
-  //   "three ",
-  //   "four ",
-  //   "five ",
-  //   "six ",
-  //   "seven ",
-  //   "eight ",
-  //   "nine ",
-  //   "ten ",
-  //   "eleven ",
-  //   "twelve ",
-  //   "thirteen ",
-  //   "fourteen ",
-  //   "fifteen ",
-  //   "sixteen ",
-  //   "seventeen ",
-  //   "eighteen ",
-  //   "nineteen ",
-  // ];
-  // var b = [
-  //   "",
-  //   "",
-  //   "twenty",
-  //   "thirty",
-  //   "forty",
-  //   "fifty",
-  //   "sixty",
-  //   "seventy",
-  //   "eighty",
-  //   "ninety",
-  // ];
-
   const [Invoice, setInvoice] = useState("");
   const [InvoiceDate, setInvoiceDate] = useState("");
   const [challan, setchallan] = useState("");
@@ -66,10 +31,6 @@ function Form() {
   const [gsttax, setGsttax] = useState(0);
   const disc = +Qty * +amount;
   const Navigate = useNavigate();
-  // const data = {
-  //     Invoice : Invoice,
-  //     InvoiceDate : InvoiceDate,
-  // };
 
   useEffect(() => {
     const data = {
@@ -94,11 +55,8 @@ function Form() {
       gAmount,
       gsttax,
     };
-    console.log("sd", data);
-    // setdetails(data);
 
     localStorage.setItem("data", JSON.stringify(data));
-    // console.log(d,"data");
   }, [
     Invoice,
     InvoiceDate,
@@ -129,13 +87,9 @@ function Form() {
   const handleClick = (e) => {
     e.preventDefault();
 
-    // setTotal(
-    //   discount === "" ? +Qty * +amount : (+Qty * +amount * +discount) / 100
-    // );
     setAllData((prev) => [
       ...prev,
       {
-        // no,
         Description,
         Qty,
         amount,
@@ -148,66 +102,11 @@ function Form() {
     setgQty((prev) => prev + +Qty);
     setgAmount((prev) => prev + +amount);
 
-    //  setno("");
     setDescription("");
     setQty(0);
     setamount(0);
     setDiscount(0);
-    // setTotal(0);
-    // setAllData();
-
-    // setGsttax((prev)=> )
-    // gg();
   };
-
-  // function inWords(num) {
-  //   if ((num = num.toString()).length > 9) return "overflow";
-  //   const n = ("000000000" + num)
-  //     .substr(-9)
-  //     .match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
-  //   if (!n) return;
-  //   var str = "";
-  //   str +=
-  //     n[1] !== 0
-  //       ? (a[Number(n[1])] || b[n[1][0]] + " " + a[n[1][1]]) + "crore "
-  //       : "";
-  //   str +=
-  //     n[2] !== 0
-  //       ? (a[Number(n[2])] || b[n[2][0]] + " " + a[n[2][1]]) + "lakh "
-  //       : "";
-  //   str +=
-  //     n[3] !== 0
-  //       ? (a[Number(n[3])] || b[n[3][0]] + " " + a[n[3][1]]) + "thousand "
-  //       : "";
-  //   str +=
-  //     n[4] !== 0
-  //       ? (a[Number(n[4])] || b[n[4][0]] + " " + a[n[4][1]]) + "hundred "
-  //       : "";
-  //   str +=
-  //     n[5] !== 0
-  //       ? (str !== "" ? "and " : "") +
-  //         (a[Number(n[5])] || b[n[5][0]] + " " + a[n[5][1]]) +
-  //         "only "
-  //       : "";
-  //   return str;
-  // }
-
-  // inWords();
-
-  // document.getElementById('number').onkeyup = function () {
-  //     document.getElementById('words').innerHTML = inWords(document.getElementById('number').value);
-  // };
-
-  // const gg = () => {
-  //   setno("");
-  //   setDescription("");
-  //   setQty("");
-  //   setamount("");
-  //   setDiscount("");
-  //   setTotal("");
-  //   setAllData("");
-  // };
-  // console.log(allData.length, "data");
 
   const submitHandler = () => {
     var percent = (5 / 100) * aTotal;
@@ -217,7 +116,6 @@ function Form() {
         setAllData((prev) => [
           ...prev,
           {
-            // no: i + 1,
             Description: "",
             Qty: "",
             amount: "",
@@ -233,29 +131,8 @@ function Form() {
   const navgiate = () => {
     Navigate("/pdf");
   };
-  // console.log(allData);
-  // console.log(Invoice,"invoice")
+
   return (
-    //     <div className='ddd'>
-    //     <form >
-    //     <div className="row ddd">
-    //     <div className='col-md-6'>
-
-    //         <input
-    //             className="form-control ddd"
-    //         />
-    //     </div>
-    //     <div className='col-md-6'>
-
-    // <input
-    //     className="form-control ddd"
-    // />
-    // </div>
-    //     </div>
-
-    //     </form>
-    //     </div>
-
     <div>
       <form className="row g-3 form-wrapper">
         <div className="col-md-3 form-col">
@@ -270,7 +147,14 @@ function Form() {
           <input
             type="date"
             className="form-control"
-            onChange={(e) => setInvoiceDate(e.target.value)}
+            onChange={(e) =>
+              setInvoiceDate(
+                `${e.target.value.slice(8, 11)} - ${e.target.value.slice(
+                  5,
+                  7
+                )} - ${e.target.value.slice(0, 4)}`
+              )
+            }
           />
         </div>
         <div className="col-md-3 ">
@@ -363,19 +247,8 @@ function Form() {
             className="form-control"
             onChange={(e) => setCodde(e.target.value)}
           />
-
-          {/* inputs */}
         </div>
         <label className="col-md-12 text-align-center"> Bill Details</label>
-        {/* ***************************** */}
-        {/* <div className=" col-sm-1 col-md-1  ">
-          <label className="form-label">No :</label>
-          <input
-            className="form-control"
-            // value={no}
-            // onChange={(e) => setno(e.target.value)}
-          />
-        </div> */}
         <div className="col-sm-11 col-md-3">
           <label className="form-label">Desc :</label>
           <input
@@ -409,11 +282,7 @@ function Form() {
         </div>
         <div className="col-md-1 ">
           <label className="form-label">Total :</label>
-          <input
-            className="form-control"
-            placeholder={total}
-            // onChange={(e) => setTotal(amount)}
-          />
+          <input className="form-control" placeholder={total} />
         </div>
         <div className="col-md-1 mt-5">
           {allData.length < 8 && (
@@ -424,35 +293,9 @@ function Form() {
               +
             </button>
           )}
-
-          {/* <span id="words"></span>
-<input id="number" type="text" /> */}
         </div>
-        {/* <div className="col-md-6 ">
-     <label  className="form-label">
-        Invoice No :
-     </label>
-     <input
-     className="form-control"
-           onChange={(e)=> setInvoice(e.target.value)} 
-        />
-     </div> */}
       </form>
 
-      {/* <div className="row">
-    //     <label>Invoice No:</label>
-    //     <input
-    //        onChange={(e)=> setInvoice(e.target.value)} 
-    //     />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-    //     <div>Invoice Date:</div>
-    //     <input
-    //     type="date"
-    //        onChange={(e)=> setInvoiceDate(e.target.value)} 
-    //     />
-
-    // </div>&nbsp;
-    // <div > */}
       <button
         onClick={() => {
           submitHandler();
@@ -462,7 +305,6 @@ function Form() {
       </button>
 
       <button onClick={() => navgiate()}>View</button>
-      {/* // </div> */}
       {allData.map((data, i) => {
         const index = i;
         return (
