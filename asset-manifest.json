@@ -2,11 +2,9 @@
   "files": {
     "main.css": "/Bill-creater/static/css/main.2425503d.css",
     "main.js": "/Bill-creater/static/js/main.4387da64.js",
-    "787.f055211e.chunk.js": "/Bill-creater/static/js/787.f055211e.chunk.js",
     "index.html": "/Bill-creater/index.html",
     "main.2425503d.css.map": "/Bill-creater/static/css/main.2425503d.css.map",
-    "main.4387da64.js.map": "/Bill-creater/static/js/main.4387da64.js.map",
-    "787.f055211e.chunk.js.map": "/Bill-creater/static/js/787.f055211e.chunk.js.map"
+    "main.4387da64.js.map": "/Bill-creater/static/js/main.4387da64.js.map"
   },
   "entrypoints": [
     "static/css/main.2425503d.css",
