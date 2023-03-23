@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Bill-creater/static/css/main.2425503d.css",
+    "main.js": "/Bill-creater/static/js/main.051ba4f3.js",
+    "index.html": "/Bill-creater/index.html",
+    "main.2425503d.css.map": "/Bill-creater/static/css/main.2425503d.css.map",
+    "main.051ba4f3.js.map": "/Bill-creater/static/js/main.051ba4f3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2425503d.css",
+    "static/js/main.051ba4f3.js"
+  ]
+}
